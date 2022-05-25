@@ -1,0 +1,28 @@
+html {
+  background-color: #04020e;
+  color: white;
+}
+
+html body section article div {
+  width: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body section article div svg {
+  width: 200px;
+  height: 3px;
+}
+
+html body section article div .svg-complete {
+  width: 415px;
+}
+/*# sourceMappingURL=estilos.css.map */

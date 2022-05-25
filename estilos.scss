@@ -1,0 +1,25 @@
+
+html {    
+    background-color: rgb(4, 2, 14);
+    color: white;
+    body{
+        section{
+            article{
+                div{
+                    width: 700px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;     
+                                
+                    svg{
+                        width: 200px;
+                        height: 3px;
+                    }
+                    .svg-complete{
+                        width: 415px;
+                    }
+                }
+            }
+        }
+    }    
+}
