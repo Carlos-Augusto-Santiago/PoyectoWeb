@@ -1,25 +1,68 @@
-
-html {    
+html {
     background-color: rgb(4, 2, 14);
     color: white;
-    body{
-        section{
-            article{
-                div{
+    body {
+        header {
+            text-align: center;
+        }
+        section {
+            article {
+                div {
                     width: 700px;
                     display: flex;
                     flex-direction: row;
-                    align-items: center;     
-                                
-                    svg{
-                        width: 200px;
+                    align-items: center;
+
+                    svg {
+                        width: 90px;
                         height: 3px;
                     }
-                    .svg-complete{
-                        width: 415px;
+                    .svg-complete {
+                        width: 200px;
+                    }
+                }
+                form {
+                    input {
+                        padding: 0.5rem;
+                    }
+                    .btn {
+                        padding: 0.5rem;
+                        border-top-color: bisque;
+                        border-left-color: bisque;
+                    }
+                    .add {
+                        background-color: lightcoral;
+                        border-bottom-color: bisque;
+                        border-right-color: bisque;
+                        &:hover {
+                            background-color: rgb(174, 92, 92);
+                            cursor: pointer;
+                        }
+                    }
+                    .random {
+                        background-color: lightblue;
+                        border-bottom-color: bisque;
+                        border-right-color: bisque;
+                        &:hover {
+                            background-color: rgb(123, 157, 169);
+                            cursor: pointer;
+                        }
                     }
                 }
             }
         }
-    }    
+        .hexagramas {
+            width: 700px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            svg {
+                width: 90px;
+                height: 3px;
+            }
+            .svg-complete {
+                width: 200px;
+            }
+        }
+    }
 }

@@ -3,6 +3,10 @@ html {
   color: white;
 }
 
+html body header {
+  text-align: center;
+}
+
 html body section article div {
   width: 700px;
   display: -webkit-box;
@@ -18,11 +22,66 @@ html body section article div {
 }
 
 html body section article div svg {
-  width: 200px;
+  width: 90px;
   height: 3px;
 }
 
 html body section article div .svg-complete {
-  width: 415px;
+  width: 200px;
+}
+
+html body section article form input {
+  padding: 0.5rem;
+}
+
+html body section article form .btn {
+  padding: 0.5rem;
+  border-top-color: bisque;
+  border-left-color: bisque;
+}
+
+html body section article form .add {
+  background-color: lightcoral;
+  border-bottom-color: bisque;
+  border-right-color: bisque;
+}
+
+html body section article form .add:hover {
+  background-color: #ae5c5c;
+  cursor: pointer;
+}
+
+html body section article form .random {
+  background-color: lightblue;
+  border-bottom-color: bisque;
+  border-right-color: bisque;
+}
+
+html body section article form .random:hover {
+  background-color: #7b9da9;
+  cursor: pointer;
+}
+
+html body .hexagramas {
+  width: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body .hexagramas svg {
+  width: 90px;
+  height: 3px;
+}
+
+html body .hexagramas .svg-complete {
+  width: 200px;
 }
 /*# sourceMappingURL=estilos.css.map */
