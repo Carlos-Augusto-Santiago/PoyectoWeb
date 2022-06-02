@@ -1,87 +1,138 @@
 html {
-  background-color: #04020e;
-  color: white;
+    background-color: #04020e;
+    color: white;
 }
 
 html body header {
-  text-align: center;
+    text-align: center;
 }
 
 html body section article div {
-  width: 700px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+    width: 700px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 html body section article div svg {
-  width: 90px;
-  height: 3px;
+    width: 90px;
+    height: 3px;
 }
 
 html body section article div .svg-complete {
-  width: 200px;
+    width: 200px;
+}
+
+html body section article form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 20px;
 }
 
 html body section article form input {
-  padding: 0.5rem;
+    padding: 0.5rem;
 }
 
-html body section article form .btn {
-  padding: 0.5rem;
-  border-top-color: bisque;
-  border-left-color: bisque;
+html body section article form div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 20px;
 }
 
-html body section article form .add {
-  background-color: lightcoral;
-  border-bottom-color: bisque;
-  border-right-color: bisque;
+html body section article form div .btn {
+    padding: 0.5rem;
 }
 
-html body section article form .add:hover {
-  background-color: #ae5c5c;
-  cursor: pointer;
+html body section article form div .add {
+    background-color: lightgreen;
+    border: none;
 }
 
-html body section article form .random {
-  background-color: lightblue;
-  border-bottom-color: bisque;
-  border-right-color: bisque;
+html body section article form div .add:hover {
+    background-color: #62a162;
+    cursor: pointer;
 }
 
-html body section article form .random:hover {
-  background-color: #7b9da9;
-  cursor: pointer;
+html body section article form div .random {
+    border: none;
+    background-color: lightblue;
 }
 
-html body .hexagramas {
-  width: 700px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+html body section article form div .random:hover {
+    background-color: #7b9da9;
+    cursor: pointer;
 }
 
-html body .hexagramas svg {
-  width: 90px;
-  height: 3px;
+html body section article form div .line {
+    border: none;
+    background-color: lightcoral;
 }
 
-html body .hexagramas .svg-complete {
-  width: 200px;
+html body section article form div .line:hover {
+    background-color: #995252;
+    cursor: pointer;
 }
+
+html body section article form div .hexa {
+    border: none;
+    background-color: #f10707;
+    color: white;
+}
+
+html body section article form div .hexa:hover {
+    background-color: #9b0303;
+    cursor: pointer;
+}
+
+html body #hexagramas {
+    margin-top: 3rem;
+    margin-left: 3rem;
+    width: 10rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+html body #hexagramas div {
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+html body #hexagramas div #svg-complete {
+    width: 200px;
+}
+
+html body #hexagramas div svg {
+    width: 90px;
+    height: 3px;
+}
+
+
 /*# sourceMappingURL=estilos.css.map */
