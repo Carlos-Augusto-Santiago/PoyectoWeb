@@ -4,7 +4,7 @@ function getNode(n, v) {
     for (var p in v)
         n.setAttributeNS(
             null,
-            p.replace(/[A-Z]/g, function(m, p, o, s) {
+            p.replace(/[A-Z]/g, function (m, p, o, s) {
                 return "-" + m.toLowerCase();
             }),
             v[p]
@@ -94,9 +94,18 @@ function getData() {
         //Sumamos los valores para generar la linea correspondiente
         var total = val1 + val2 + val3;
 
-        //Creacion de la caja en donde poner los hexagramas
-        var hexagram = document.createElement("section");
-        hexagram.setAttribute("id", "hexagramas");
+        //Obtenemos la caja
+        var verificar = document.getElementById("hexagramas");
+        //Verificar si hay caja de hexagramas
+        if (verificar == null) {
+            //Creacion de la caja en donde poner los hexagramas
+            var hexagram = document.createElement("section");
+            hexagram.setAttribute("id", "hexagramas");            
+        } 
+        //La caja ya existe
+        else {
+            var hexagram = document.getElementById("hexagramas");            
+        }
         hexagram.style.backgroundColor = "lightslategray";
 
         //Verificamos el tipo de svg y se guarda en variable
@@ -116,9 +125,18 @@ function generateRandom() {
         //Generamos un numero random entre 9 y 6
         var random = Math.floor(Math.random() * (10 - 6)) + 6;
 
-        //Creacion de la caja en donde poner los hexagramas
-        var hexagram = document.createElement("section");
-        hexagram.setAttribute("id", "hexagramas");
+        //Obtenemos la caja
+        var verificar = document.getElementById("hexagramas");
+        //Verificar si hay caja de hexagramas
+        if (verificar == null) {
+            //Creacion de la caja en donde poner los hexagramas
+            var hexagram = document.createElement("section");
+            hexagram.setAttribute("id", "hexagramas");            
+        } 
+        //La caja ya existe
+        else {
+            var hexagram = document.getElementById("hexagramas");         
+        }
         hexagram.style.backgroundColor = "lightslategray";
 
         //Verificamos el tipo de svg y se guarda en variable
@@ -137,7 +155,7 @@ function deleteLine() {
     var hexagram = document.getElementById("hexagramas");
     //Borramos el ultimo hijo que haya sido ingresado
     hexagram.removeChild(hexagram.lastChild);
-    //Reducimos el contador 
+    //Reducimos el contador
     --contador;
     if (contador == 0) {
         hexagram.remove();
@@ -148,4 +166,6 @@ function deleteHexagram() {
     //Obtenemos el hexagrama y lo eliminamos
     var hexagram = document.getElementById("hexagramas");
     hexagram.remove();
+    //restablecemos el contador para que siga tirando
+    contador = 0;
 }
