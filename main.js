@@ -82,6 +82,9 @@ function typeSvg(total) {
 
 //Variable contador para contar maximo 6 entradas de valores
 var contador = 0;
+//Arreglo para guardar los valores del hexagrama
+var hexagrama = [];
+
 //Obtener los valores al presionar el botton Ingresa valores
 function getData() {
     //Aun puede seguir tirando
@@ -93,6 +96,8 @@ function getData() {
 
         //Sumamos los valores para generar la linea correspondiente
         var total = val1 + val2 + val3;
+        //Guardar el valor en el arreglo del hexagrama
+        hexagrama.push(total);
 
         //Obtenemos la caja
         var verificar = document.getElementById("hexagramas");
@@ -114,6 +119,11 @@ function getData() {
         hexagram.appendChild(contenedor);
         document.body.appendChild(hexagram);
         ++contador;
+
+        //Si se llego a las 6 tiradas genera el hexagrama
+        if(contador==6)
+            generateHexagram();
+
     } else {
         alert("No puedes tirar más");
     }
@@ -145,6 +155,10 @@ function generateRandom() {
         hexagram.appendChild(contenedor);
         document.body.appendChild(hexagram);
         ++contador;
+
+        //Si se llego a las 6 tiradas genera el hexagrama
+        if(contador==6)
+            generateHexagram();
     } else {
         alert("No puedes tirar más");
     }
@@ -157,6 +171,8 @@ function deleteLine() {
     hexagram.removeChild(hexagram.lastChild);
     //Reducimos el contador
     --contador;
+    hexagrama.pop();
+
     if (contador == 0) {
         hexagram.remove();
     }
@@ -165,7 +181,122 @@ function deleteLine() {
 function deleteHexagram() {
     //Obtenemos el hexagrama y lo eliminamos
     var hexagram = document.getElementById("hexagramas");
+    hexagrama = [];
     hexagram.remove();
     //restablecemos el contador para que siga tirando
     contador = 0;
+}
+
+//Los numeros de los exagramas dependendiendo de su numero en binario
+var hexagramaSecuencia =
+    [
+        1,44,13,33,10,6,25,12,
+        9,57,37,53,61,59,21,20,
+        14,50,30,56,38,64,21,35,
+        26,18,22,52,41,4,27,23,
+        43,28,49,31,58,47,17,45,
+        5,48,63,39,60,29,3,8,
+        34,32,55,62,54,40,51,16,
+        11,46,36,15,19,7,24,2
+    ];
+
+//Todos los nombres de los exagramas en orden 
+var nombreHexagrama = 
+    [
+        "Ch'ien","K'un","Chun","Meng","Hsü","Sung","Shih","Pi",
+        "Hsiao Ch'u","Lü","T'ai","P'i","T'ung Jen","Ta Yu","Ch'ien","Yü",
+        "Sui","Ku","Lin","Kuan","Shih Ho","Pi","Po","Fu",
+        "Wu Wang","Ta Ch'u","I","Ta Kuo","K'an","Li","Hsien","Heng",
+        "Tun","Ta Chuang","Chin","Ming I","Chia Jen","K'uei","Chien","Hsieh",
+        "Sun","I","Kuai","Kou","Ts'ui","Sheng","K'un","Ching",
+        "Ko","Ting","Chen","Ken","Chien","Kuei Mei","Feng","Lü",
+        "Sun","Tui","Huan","Chieh","Chung Fu","Hsiao Kuo","Chi Chi","Wei Chi"
+    ];
+
+function generateHexagram(){
+    //Un arreglo que nos servira para pasar del hexagrama a binario y poder ponerlo 
+    var auxh = [];
+    //Servira para saber si hay almenos un mutante
+    var verif = false;
+    //Evalua cada linea del hexagrama 
+    hexagrama.forEach( function(numero,index){
+        if(numero==7 || numero == 9)
+        {
+            auxh[index]=0;
+            if(numero == 9 && !verif)
+                verif = true;
+        } 
+        else
+        {
+            auxh[index]=1;
+            if(numero == 6 && !verif)
+                verif = true;
+        }
+        console.log(auxh[index]);
+    });
+
+    //Tomando que yang = 0 y yin = 1 sea mutante o no se hace una conversion de binario a decimal
+    var tipoHexagrama = 0;
+    
+    for(j = 0; j < 6;j++)
+    {
+        tipoHexagrama+=Math.pow(2,j)*auxh[j];
+    }
+    //La conversion de binario a decimal
+    console.log(tipoHexagrama);
+    //El numero de hexagrama de la lista de hexagramas
+    //Para usar su numero de hexagrama hexagramaSecuencia[tipoHexagrama] si quieres lo puedes guardar
+    console.log(hexagramaSecuencia[tipoHexagrama]);
+    //EL nombre del hexagrama dependiendo de su tipo
+    //Para usar su nombre nombreHexagrama[hexagramaSecuencia[tipoHexagrama]-1] si quieres lo puedes guardar
+    console.log(nombreHexagrama[hexagramaSecuencia[tipoHexagrama]-1]);
+
+    //Si es que tiene un mutante sigue esta parte
+    if(verif)
+    {
+        //Un arreglo que nos servira para guardar la transformacion y no alterar el hexagrama original
+        //(Si se modificara el hexagrama original se tendria que volver a hacer todo el hexagrama)
+        var hexagramaTransformado = [];
+
+        //Convierte solo los mutantes a normales
+        hexagrama.forEach( function(numero,index){
+            if(numero == 9)
+            {
+                hexagramaTransformado[index] = numero-1;
+            } 
+            else if(numero == 6)
+            {
+                hexagramaTransformado[index] = numero+1;
+            }
+            else
+            hexagramaTransformado[index] = numero;
+
+            console.log(hexagramaTransformado[index]);
+        });
+        
+        //Esta parte es la misma que la anterior solo que sabiendo que solo hay 7 y 8
+        hexagramaTransformado.forEach( function(numero,index){
+            if(numero==7)
+                auxh[index]=0;
+            else
+                auxh[index]=1;
+            console.log(auxh[index]);
+        });
+
+        tipoHexagrama = 0;
+
+        for(j = 0; j < 6;j++)
+        {
+            tipoHexagrama+=Math.pow(2,j)*auxh[j];
+        }
+         //La conversion de binario a decimal
+        console.log(tipoHexagrama);
+        //El numero de hexagrama de la lista de hexagramas
+        //Para usar su numero de hexagrama hexagramaSecuencia[tipoHexagrama] si quieres lo puedes guardar
+        console.log(hexagramaSecuencia[tipoHexagrama]);
+        //EL nombre del hexagrama dependiendo de su tipo
+        //Para usar su nombre nombreHexagrama[hexagramaSecuencia[tipoHexagrama]-1] si quieres lo puedes guardar
+        console.log(nombreHexagrama[hexagramaSecuencia[tipoHexagrama]-1]);
+
+    }
 }
