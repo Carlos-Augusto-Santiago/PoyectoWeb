@@ -134,3 +134,57 @@ html body #hexagramas div #svg-complete {
   width: 200px;
 }
 /*# sourceMappingURL=estilos.css.map */
+
+.color{
+  animation-name: hex;
+  animation-duration: 3s;
+}
+
+@keyframes hex {
+  0%   {background-color:#7b9da9;}
+  25%  {background-color:#677bce;}
+  50%  {background-color:#2b5e94;}
+  75%  {background-color:#345249;}
+  100% {background-color:#7b9da9;}
+}
+
+.namep{
+  animation-name: nombrehex;
+  animation-duration: 3s;
+}
+
+@keyframes nombrehex {
+  0% {
+    transform: rotate(0deg); 
+  }
+  100% {
+    transform: rotate(1440deg);
+  }
+}
+
+.namepborrar{
+  animation-name: nombrehexborr;
+  animation-duration: 3s;
+}
+
+@keyframes nombrehexborr {
+  0% {
+    transform: scale(0.9); 
+  }
+  100% {
+    transform: scale(0.1);
+  }
+}
+
+.colorborrar{
+  animation-name: hexborr;
+  animation-duration: 3s;
+}
+
+@keyframes hexborr {
+  0%   {background-color:red;}
+  25%  {background-color:yellow;}
+  50%  {background-color:blue;}
+  75%  {background-color:green;}
+  100% {background-color:red;}
+}

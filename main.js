@@ -1,3 +1,5 @@
+let nombrehex;
+let base;
 //funcion para manejo de svg
 function getNode(n, v) {
     n = document.createElementNS("http://www.w3.org/2000/svg", n);
@@ -105,7 +107,8 @@ function getData() {
         if (verificar == null) {
             //Creacion de la caja en donde poner los hexagramas
             var hexagram = document.createElement("section");
-            hexagram.setAttribute("id", "hexagramas");            
+            hexagram.setAttribute("id", "hexagramas");
+            hexagram.classList.add("color");            
         } 
         //La caja ya existe
         else {
@@ -117,7 +120,8 @@ function getData() {
         var contenedor = typeSvg(total);
 
         hexagram.appendChild(contenedor);
-        document.body.appendChild(hexagram);
+        base = document.getElementById('hexagrama');
+        base.appendChild(hexagram);
         ++contador;
 
         //Si se llego a las 6 tiradas genera el hexagrama
@@ -153,7 +157,8 @@ function generateRandom() {
         var contenedor = typeSvg(random);
 
         hexagram.appendChild(contenedor);
-        document.body.appendChild(hexagram);
+        base = document.getElementById('hexagrama');
+        base.appendChild(hexagram);
         ++contador;
 
         //Si se llego a las 6 tiradas genera el hexagrama
@@ -168,23 +173,30 @@ function deleteLine() {
     //Seleccionamos el contendor padre de las lineas de hexagramas
     var hexagram = document.getElementById("hexagramas");
     //Borramos el ultimo hijo que haya sido ingresado
-    hexagram.removeChild(hexagram.lastChild);
+    hexagram.classList.add("namep");
+    let pan = document.getElementById("parrafoname");
+    if(pan) pan.classList.add("namepborrar");
+    setTimeout(() => {hexagram.removeChild(hexagram.lastChild);base.removeChild(pan);}, 3000);
     //Reducimos el contador
     --contador;
     hexagrama.pop();
-
     if (contador == 0) {
         hexagram.remove();
     }
+    setTimeout(() => {hexagram.classList.remove('namep');pan.classList.remove("namepborrar");}, 3000);
 }
 
 function deleteHexagram() {
     //Obtenemos el hexagrama y lo eliminamos
     var hexagram = document.getElementById("hexagramas");
     hexagrama = [];
-    hexagram.remove();
+    hexagram.classList.add("colorborrar");
+    let pan = document.getElementById("parrafoname");
+    if(pan) pan.classList.add("namepborrar");
+    setTimeout(() => {hexagram.remove();base.removeChild(pan);}, 3000);
     //restablecemos el contador para que siga tirando
     contador = 0;
+    setTimeout(() => {hexagram.classList.remove('colorborrar');pan.classList.remove("namepborrar");}, 3000);
 }
 
 //Los numeros de los exagramas dependendiendo de su numero en binario
@@ -203,14 +215,14 @@ var hexagramaSecuencia =
 //Todos los nombres de los exagramas en orden 
 var nombreHexagrama = 
     [
-        "Ch'ien","K'un","Chun","Meng","Hsü","Sung","Shih","Pi",
-        "Hsiao Ch'u","Lü","T'ai","P'i","T'ung Jen","Ta Yu","Ch'ien","Yü",
-        "Sui","Ku","Lin","Kuan","Shih Ho","Pi","Po","Fu",
-        "Wu Wang","Ta Ch'u","I","Ta Kuo","K'an","Li","Hsien","Heng",
-        "Tun","Ta Chuang","Chin","Ming I","Chia Jen","K'uei","Chien","Hsieh",
-        "Sun","I","Kuai","Kou","Ts'ui","Sheng","K'un","Ching",
-        "Ko","Ting","Chen","Ken","Chien","Kuei Mei","Feng","Lü",
-        "Sun","Tui","Huan","Chieh","Chung Fu","Hsiao Kuo","Chi Chi","Wei Chi"
+        "1.Ch'ien","2.K'un","3.Chun","4.Meng","5.Hsü","6.Sung","7.Shih","8.Pi",
+        "9.Hsiao Ch'u","10.Lü","11.T'ai","12.P'i","13.T'ung Jen","14.Ta Yu","15.Ch'ien","16.Yü",
+        "17.Sui","18.Ku","19.Lin","20.Kuan","21.Shih Ho","22.Pi","23.Po","24.Fu",
+        "25.Wu Wang","26.Ta Ch'u","27.I","28.Ta Kuo","29.K'an","30.Li","31.Hsien","32.Heng",
+        "33.Tun","34.Ta Chuang","35.Chin","36.Ming I","37.Chia Jen","38.K'uei","39.Chien","40.Hsieh",
+        "41.Sun","42.I","43.Kuai","44.Kou","45.Ts'ui","46.Sheng","47.K'un","48.Ching",
+        "49.Ko","50.Ting","51.Chen","52.Ken","53.Chien","54.Kuei Mei","55.Feng","56.Lü",
+        "57.Sun","58.Tui","59.Huan","60.Chieh","61.Chung Fu","62.Hsiao Kuo","63.Chi Chi","64.Wei Chi"
     ];
 
 function generateHexagram(){
@@ -249,7 +261,8 @@ function generateHexagram(){
     console.log(hexagramaSecuencia[tipoHexagrama]);
     //EL nombre del hexagrama dependiendo de su tipo
     //Para usar su nombre nombreHexagrama[hexagramaSecuencia[tipoHexagrama]-1] si quieres lo puedes guardar
-    console.log(nombreHexagrama[hexagramaSecuencia[tipoHexagrama]-1]);
+    nombrehex = nombreHexagrama[hexagramaSecuencia[tipoHexagrama]-1];
+    console.log(nombrehex);
 
     //Si es que tiene un mutante sigue esta parte
     if(verif)
@@ -296,7 +309,15 @@ function generateHexagram(){
         console.log(hexagramaSecuencia[tipoHexagrama]);
         //EL nombre del hexagrama dependiendo de su tipo
         //Para usar su nombre nombreHexagrama[hexagramaSecuencia[tipoHexagrama]-1] si quieres lo puedes guardar
-        console.log(nombreHexagrama[hexagramaSecuencia[tipoHexagrama]-1]);
-
+        nombrehex = nombreHexagrama[hexagramaSecuencia[tipoHexagrama]-1];
+        console.log(nombrehex);
     }
+    let pname = document.createElement("p");
+    pname.textContent = nombrehex;
+    pname.setAttribute("id","parrafoname");
+    pname.style.marginLeft = "130px";
+    pname.style.fontSize = "20px";
+    pname.style.width = "100px"
+    pname.classList.add("namep");
+    base.appendChild(pname);
 }
