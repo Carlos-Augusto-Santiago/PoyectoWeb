@@ -179,6 +179,12 @@ function deleteLine() {
         hexagram.removeChild(hexagram.lastChild);
         base.removeChild(pan);
     }, 3000);
+
+    if(contador==6)
+    {
+        var hexagramas2 = document.getElementById("hexagramas2");
+        hexagramas2 = "";
+    }
     //Reducimos el contador
     --contador;
     hexagrama.pop();
@@ -195,6 +201,8 @@ function deleteLine() {
 }
 
 function deleteHexagram() {
+    location.reload();
+    /*
     //Obtenemos el hexagrama y lo eliminamos
     Borrar();
     var hexagram = document.getElementById("hexagramas");
@@ -213,7 +221,7 @@ function deleteHexagram() {
         pan.classList.remove("namepborrar");
     }, 3000);
     let sp1 = document.getElementById("spantool");
-    if (sp1) base.removeChild(sp1);
+    if (sp1) base.removeChild(sp1);*/
 }
 
 //Los numeros de los hexagramas dependendiendo de su numero en binario
