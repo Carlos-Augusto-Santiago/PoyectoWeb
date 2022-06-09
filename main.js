@@ -186,10 +186,12 @@ function deleteLine() {
     setTimeout(() => {hexagram.classList.remove('namep');pan.classList.remove("namepborrar");}, 3000);
     let sp1 = document.getElementById("spantool");
     if(sp1) base.removeChild(sp1);
+    Borrar();
 }
 
 function deleteHexagram() {
     //Obtenemos el hexagrama y lo eliminamos
+    Borrar();
     var hexagram = document.getElementById("hexagramas");
     hexagrama = [];
     hexagram.classList.add("colorborrar");
@@ -337,321 +339,645 @@ function Descrip()
     {
         sp.textContent = "Cielo. Lo creativo. El principio generador";
         base.appendChild(sp);
+        document.getElementById("a1").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[1])
     {
         sp.textContent = "Tierra. Lo receptivo. El principio pasivo";
         base.appendChild(sp);
+        document.getElementById("a2").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[2])
     {
         sp.textContent = "Acumular. El obstáculo inicial.La dificultad del comienzo";
         base.appendChild(sp);
+        document.getElementById("a3").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[3])
     {
         sp.textContent = "Juventud.El joven necio.La inmadurez";
         base.appendChild(sp);
+        document.getElementById("a4").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[4])
     {
         sp.textContent = "Esperar.La espera.La maduración.";
         base.appendChild(sp);
+        document.getElementById("a5").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[5])
     {
         sp.textContent = "Disputar.El conflicto.El pleito";
         base.appendChild(sp);
+        document.getElementById("a6").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[6])
     {
         sp.textContent = "Ejército.La legión.";
         base.appendChild(sp);
+        document.getElementById("a7").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[7])
     {
         sp.textContent = "Solidaridad.La unión";
         base.appendChild(sp);
+        document.getElementById("a8").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[8])
     {
         sp.textContent = "Animalito doméstico.La pequeña fuerza";
         base.appendChild(sp);
+        document.getElementById("a9").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[9])
     {
         sp.textContent = "Caminar.El porte.El paso cauteloso";
         base.appendChild(sp);
+        document.getElementById("a10").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[10])
     {
         sp.textContent = "Prosperidad.La paz.La armonía.";
         base.appendChild(sp);
+        document.getElementById("a11").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[11])
     {
         sp.textContent = "Cierre.El estancamiento.Lo inerte.";
         base.appendChild(sp);
+        document.getElementById("a12").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[12])
     {
         sp.textContent = "Hombres Reunidos. La unión comunitaria";
         base.appendChild(sp);
+        document.getElementById("a13").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[13])
     {
         sp.textContent = "Gran dominio. La gran posesión.Lo que se tiene de más.";
         base.appendChild(sp);
+        document.getElementById("a14").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[14])
     {
         sp.textContent = "Condescendencia. La modestia.La humildad";
         base.appendChild(sp);
+        document.getElementById("a15").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[15])
     {
         sp.textContent = "Ocuparse.El entusiasmo.La algarabía.";
         base.appendChild(sp);
+        document.getElementById("a16").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[16])
     {
         sp.textContent = "Conformarse.La continuidad.El seguimiento.";
         base.appendChild(sp);
+        document.getElementById("a17").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[17])
     {
         sp.textContent = "Destrucción.La reconstrucción. La labor en lo corrompido.";
         base.appendChild(sp);
+        document.getElementById("a18").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[18])
     {
         sp.textContent = "Acercarse.Lo que va llegando.";
         base.appendChild(sp);
+        document.getElementById("a19").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[19])
     {
         sp.textContent = "Observar.La contemplación.";
         base.appendChild(sp);
+        document.getElementById("a20").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[20])
     {
         sp.textContent = "Quebrar mordiendo.La dentellada.La filosa mordedura";
         base.appendChild(sp);
+        document.getElementById("a21").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[21])
     {
         sp.textContent = "Adornar.La elegancia.La gracia.";
         base.appendChild(sp);
+        document.getElementById("a22").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[22])
     {
         sp.textContent = "Resquebrajar.La desintegración.El derrumbe";
         base.appendChild(sp);
+        document.getElementById("a23").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[23])
     {
         sp.textContent = "Regresar.El retorno.Lo que vuelve.";
         base.appendChild(sp);
+        document.getElementById("a24").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[24])
     {
         sp.textContent = "Sinceridad. La inocencia.La naturalidad.";
         base.appendChild(sp);
+        document.getElementById("a25").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[25])
     {
         sp.textContent = "Fuerza educadora.El poder de lo fuerte.La gran acumulación.";
         base.appendChild(sp);
+        document.getElementById("a26").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[26])
     {
         sp.textContent = "Nutrirse.La alimentación.Las fauces.";
         base.appendChild(sp);
+        document.getElementById("a27").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[27])
     {
         sp.textContent = "Excesos.La preponderancia de lo grande.";
         base.appendChild(sp);
+        document.getElementById("a28").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[28])
     {
         sp.textContent = "Peligro.Lo abismal.La caida.";
         base.appendChild(sp);
+        document.getElementById("a29").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[29])
     {
         sp.textContent = "Distinguir.El resplandor.Lo adherente.";
         base.appendChild(sp);
+        document.getElementById("a30").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[30])
     {
         sp.textContent = "Unir.La influencia.La atracción.";
         base.appendChild(sp);
+        document.getElementById("a31").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[31])
     {
         sp.textContent = "Luna Creciente.La duración. La permanencia.";
         base.appendChild(sp);
+        document.getElementById("a32").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[32])
     {
         sp.textContent = "Retirarse.EL repliegue.";
         base.appendChild(sp);
+        document.getElementById("a33").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[33])
     {
         sp.textContent = "Gran fuerza.El gran vigor.";
         base.appendChild(sp);
+        document.getElementById("a34").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[34])
     {
         sp.textContent = "Progresar.El avance.";
         base.appendChild(sp);
+        document.getElementById("a35").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[35])
     {
         sp.textContent = "Luz que se apaga.El oscurecimiento.";
         base.appendChild(sp);
+        document.getElementById("a36").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[36])
     {
         sp.textContent = "Gente de familia. El clan.";
         base.appendChild(sp);
+        document.getElementById("a37").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[37])
     {
         sp.textContent = "Contraste.La oposición.El antagonismo.";
         base.appendChild(sp);
+        document.getElementById("a38").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[38])
     {
         sp.textContent = "Dificultad.El obstáculo. El impedimento.";
         base.appendChild(sp);
+        document.getElementById("a39").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[39])
     {
         sp.textContent = "Explicar.La liberación. El alivio.";
         base.appendChild(sp);
+        document.getElementById("a40").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[40])
     {
         sp.textContent = "Perder.La disminución.";
         base.appendChild(sp);
+        document.getElementById("a41").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[41])
     {
         sp.textContent = "Evolución.El aumento.La ganancia";
         base.appendChild(sp);
+        document.getElementById("a42").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[42])
     {
         sp.textContent = "Decidir.El desbordamiento.La resolución.";
         base.appendChild(sp);
+        document.getElementById("a43").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[43])
     {
         sp.textContent = "Encontrarse.El acoplamiento.";
         base.appendChild(sp);
+        document.getElementById("a44").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[44])
     {
         sp.textContent = "Cosechar.La reunión.La convergencia.";
         base.appendChild(sp);
+        document.getElementById("a45").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[45])
     {
         sp.textContent = "Subir.El ascenso.La escalada.";
         base.appendChild(sp);
+        document.getElementById("a46").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[46])
     {
         sp.textContent = "Angustia.La pesadumbre.El agotamiento.";
         base.appendChild(sp);
+        document.getElementById("a47").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[47])
     {
         sp.textContent = "El pozo de agua.La fuente.";
         base.appendChild(sp);
+        document.getElementById("a48").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[48])
     {
         sp.textContent = "Renovar.La revolución.El cambio";
         base.appendChild(sp);
+        document.getElementById("a49").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[49])
     {
         sp.textContent = "La caldera.Lo alquímico";
         base.appendChild(sp);
+        document.getElementById("a50").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[50])
     {
         sp.textContent = "Trueno.La conmoción.Lo suscitativo.";
         base.appendChild(sp);
+        document.getElementById("a51").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[51])
     {
         sp.textContent = "Cimientos.La quietud.La detención.";
         base.appendChild(sp);
+        document.getElementById("a52").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[52])
     {
         sp.textContent = "Evolución.El progreso gradual.";
         base.appendChild(sp);
+        document.getElementById("a53").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[53])
     {
         sp.textContent = "Desposar a la hija menor.La doncella.";
         base.appendChild(sp);
+        document.getElementById("a54").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[54])
     {
         sp.textContent = "Abundancia.La plenitud.";
         base.appendChild(sp);
+        document.getElementById("a55").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[55])
     {
         sp.textContent = "Viajero.El andariego";
         base.appendChild(sp);
+        document.getElementById("a56").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[56])
     {
         sp.textContent = "Viento.Lo penetrante.Lo suave.";
         base.appendChild(sp);
+        document.getElementById("a57").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[57])
     {
         sp.textContent = "Recogerse. La serenidad. La satisfacción.";
         base.appendChild(sp);
+        document.getElementById("a58").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[58])
     {
         sp.textContent = "Confusión. La dispersión.La disolución";
         base.appendChild(sp);
+        document.getElementById("a59").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[59])
     {
         sp.textContent = "Moderación.La restricción.La limitación";
         base.appendChild(sp);
+        document.getElementById("a60").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[60])
     {
         sp.textContent = "Fe Interior.La verdad interior.La sinceridad interna.";
         base.appendChild(sp);
+        document.getElementById("a61").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[61])
     {
         sp.textContent = "Pequeñas cosas importantes.La pequeña preponderancia.";
         base.appendChild(sp);
+        document.getElementById("a62").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[62])
     {
         sp.textContent = "Conclusiones.Después de la realización.";
         base.appendChild(sp);
+        document.getElementById("a63").classList.add("relleno");
     }
     if(nombrehex == nombreHexagrama[63])
     {
         sp.textContent = "Inconcluso.Antes de la realización.";
         base.appendChild(sp);
+        document.getElementById("a64").classList.add("relleno");
+    }
+}
+
+function Borrar()
+{
+    if(nombrehex == nombreHexagrama[0])
+    {
+        document.getElementById("a1").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[1])
+    {
+        document.getElementById("a2").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[2])
+    {
+        document.getElementById("a3").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[3])
+    {
+        document.getElementById("a4").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[4])
+    {
+        document.getElementById("a5").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[5])
+    {
+        document.getElementById("a6").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[6])
+    {
+        document.getElementById("a7").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[7])
+    {
+        document.getElementById("a8").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[8])
+    {
+        document.getElementById("a9").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[9])
+    {
+        document.getElementById("a10").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[10])
+    {
+        document.getElementById("a11").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[11])
+    {
+        document.getElementById("a12").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[12])
+    {
+        document.getElementById("a13").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[13])
+    {
+        document.getElementById("a14").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[14])
+    {
+        document.getElementById("a15").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[15])
+    {
+        document.getElementById("a16").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[16])
+    {
+        document.getElementById("a17").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[17])
+    {
+        document.getElementById("a18").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[18])
+    {
+        document.getElementById("a19").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[19])
+    {
+        document.getElementById("a20").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[20])
+    {
+        document.getElementById("a21").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[21])
+    {
+        document.getElementById("a22").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[22])
+    {
+        document.getElementById("a23").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[23])
+    {
+        document.getElementById("a24").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[24])
+    {
+        document.getElementById("a25").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[25])
+    {
+        document.getElementById("a26").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[26])
+    {
+        document.getElementById("a27").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[27])
+    {
+        document.getElementById("a28").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[28])
+    {
+        document.getElementById("a29").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[29])
+    {
+        document.getElementById("a30").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[30])
+    {
+        document.getElementById("a31").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[31])
+    {
+        document.getElementById("a32").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[32])
+    {
+        document.getElementById("a33").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[33])
+    {
+        document.getElementById("a34").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[34])
+    {
+        document.getElementById("a35").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[35])
+    {
+        document.getElementById("a36").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[36])
+    {
+        document.getElementById("a37").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[37])
+    {
+        document.getElementById("a38").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[38])
+    {
+        document.getElementById("a39").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[39])
+    {
+        document.getElementById("a40").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[40])
+    {
+        document.getElementById("a41").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[41])
+    {
+        document.getElementById("a42").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[42])
+    {
+        document.getElementById("a43").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[43])
+    {
+        document.getElementById("a44").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[44])
+    {
+        document.getElementById("a45").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[45])
+    {
+        document.getElementById("a46").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[46])
+    {
+        document.getElementById("a47").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[47])
+    {
+        document.getElementById("a48").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[48])
+    {
+        document.getElementById("a49").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[49])
+    {
+        document.getElementById("a50").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[50])
+    {
+        document.getElementById("a51").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[51])
+    {
+        document.getElementById("a52").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[52])
+    {
+        document.getElementById("a53").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[53])
+    {
+        document.getElementById("a54").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[54])
+    {
+        document.getElementById("a55").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[55])
+    {
+        document.getElementById("a56").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[56])
+    {
+        document.getElementById("a57").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[57])
+    {
+        document.getElementById("a58").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[58])
+    {
+        document.getElementById("a59").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[59])
+    {
+        document.getElementById("a60").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[60])
+    {
+        document.getElementById("a61").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[61])
+    {
+        document.getElementById("a62").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[62])
+    {
+        document.getElementById("a63").classList.remove("relleno");
+    }
+    if(nombrehex == nombreHexagrama[63])
+    {
+        document.getElementById("a64").classList.remove("relleno");
     }
 }
 

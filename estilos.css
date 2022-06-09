@@ -135,6 +135,7 @@ html body #hexagramas div #svg-complete {
 }
 /*# sourceMappingURL=estilos.css.map */
 
+
 .color{
   animation-name: hex;
   animation-duration: 3s;
@@ -211,4 +212,8 @@ html body #hexagramas div #svg-complete {
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+
+.relleno{
+  background-color: blue;
 }
