@@ -128,8 +128,12 @@ function getData() {
         ++contador;
 
         //Si se llego a las 6 tiradas genera el hexagrama
-        if (contador == 6) generateHexagram();
+        if (contador == 6) {
+            generateHexagram();
+            document.getElementById("line").disabled = true;
+        }
     } else {
+         
         alert("No puedes tirar más");
     }
 }
@@ -165,9 +169,12 @@ function generateRandom() {
         ++contador;
 
         //Si se llego a las 6 tiradas genera el hexagrama
-        if (contador == 6) generateHexagram();
+        if (contador == 6) {
+            generateHexagram();
+            document.getElementById("line").disabled = true;
+        }
     } else {
-        alert("No puedes tirar más");
+        alert("No puedes tirar más");        
     }
 }
 
@@ -203,28 +210,42 @@ function deleteLine() {
     Borrar();
 }
 
-function deleteHexagram() {
-    location.reload();
-    /*
+function deleteHexagram() {    
+    
+    setTimeout(() => {
+        location.reload();        
+    }, 3000);
     //Obtenemos el hexagrama y lo eliminamos
     Borrar();
     var hexagram = document.getElementById("hexagramas");
+    var hexagram2 = document.getElementById("hexagramas2");
+    var hexagram3 = document.getElementById("hexagramas3");
     hexagrama = [];
     hexagram.classList.add("colorborrar");
+    hexagrama2 = [];
+    hexagram2.classList.add("colorborrar");
+    hexagrama3 = [];
+    hexagram3.classList.add("colorborrar");
     let pan = document.getElementById("parrafoname");
     if (pan) pan.classList.add("namepborrar");
     setTimeout(() => {
         hexagram.remove();
+        hexagram2.remove();
+        hexagram3.remove();
         base.removeChild(pan);
     }, 3000);
     //restablecemos el contador para que siga tirando
     contador = 0;
     setTimeout(() => {
         hexagram.classList.remove("colorborrar");
+        hexagram2.classList.remove("colorborrar");
+        hexagram2.classList.remove("colorborrar");
         pan.classList.remove("namepborrar");
     }, 3000);
     let sp1 = document.getElementById("spantool");
-    if (sp1) base.removeChild(sp1);*/
+    if (sp1) base.removeChild(sp1);
+
+
 }
 
 //Los numeros de los hexagramas dependendiendo de su numero en binario
@@ -451,7 +472,7 @@ function generateHexagram() {
 
 function Descrip(base) {
     let sp = document.createElement("span");
-    sp.setAttribute("id", "spantool");
+    sp.setAttribute("id", "spantool");  
     sp.classList.add("tooltiptext");
 
     if (nombrehex == nombreHexagrama[0]) {
