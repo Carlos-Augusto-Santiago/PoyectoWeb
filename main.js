@@ -108,7 +108,7 @@ function getData() {
             //Creacion de la caja en donde poner los hexagramas
             var hexagram = document.createElement("section");
             hexagram.setAttribute("id", "hexagramas");
-            hexagram.classList.add("color");            
+            hexagram.classList.add("color");          
         } 
         //La caja ya existe
         else {
@@ -121,7 +121,7 @@ function getData() {
 
         hexagram.appendChild(contenedor);
         base = document.getElementById('hexagrama');
-        base.appendChild(hexagram);
+        base.appendChild(hexagram);  
         ++contador;
 
         //Si se llego a las 6 tiradas genera el hexagrama
@@ -138,7 +138,7 @@ function generateRandom() {
     if (contador < 6) {
         //Generamos un numero random entre 9 y 6
         var random = Math.floor(Math.random() * (10 - 6)) + 6;
-
+        hexagrama.push(random);
         //Obtenemos la caja
         var verificar = document.getElementById("hexagramas");
         //Verificar si hay caja de hexagramas
@@ -320,4 +320,27 @@ function generateHexagram(){
     pname.style.width = "100px"
     pname.classList.add("namep");
     base.appendChild(pname);
+    Descrip();
+}
+
+function Descrip()
+{
+    let sp = document.createElement("span");
+    sp.classList.add("tooltiptext");
+
+    if(nombrehex == nombreHexagrama[0])
+    {
+        sp.textContent = "Cielo. Lo creativo. El principio generador";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[1])
+    {
+        sp.textContent = "Tierra. Lo receptivo. El principio pasivo";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[2])
+    {
+        sp.textContent = "Acumular. El obstáculo inicial.La dificultad del comienzo";
+        base.appendChild(sp);
+    }
 }

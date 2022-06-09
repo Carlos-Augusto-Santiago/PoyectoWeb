@@ -188,3 +188,27 @@ html body #hexagramas div #svg-complete {
   75%  {background-color:green;}
   100% {background-color:red;}
 }
+
+.tooltip{
+  width: 250px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: red;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  left: 300px;
+  bottom: 260px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
