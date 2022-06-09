@@ -86,6 +86,8 @@ function typeSvg(total) {
 var contador = 0;
 //Arreglo para guardar los valores del hexagrama
 var hexagrama = [];
+//Arreglo para visulizar si es que tiene un mutante
+var hexagramSmutante = [];
 
 //Obtener los valores al presionar el botton Ingresa valores
 function getData() {
@@ -188,7 +190,7 @@ function deleteLine() {
         pan.classList.remove("namepborrar");
     }, 3000);
     let sp1 = document.getElementById("spantool");
-    if(sp1) base.removeChild(sp1);
+    if (sp1) base.removeChild(sp1);
     Borrar();
 }
 
@@ -291,12 +293,26 @@ var nombreHexagrama = [
 ];
 
 function generateHexagram() {
+    //Caja en donde se van a colocar los svg
+    var verificar = document.getElementById("hexagramas2");
+    //Verificar si hay caja de hexagramas
+    if (verificar == null) {
+        //Creacion de la caja en donde poner los hexagramas
+        var hexagram = document.createElement("section");
+        hexagram.setAttribute("id", "hexagramas2");
+    }
+    //La caja ya existe
+    else {
+        var hexagram = document.getElementById("hexagramas2");
+    }
+    hexagram.style.backgroundColor = "lightslategray";
     //Un arreglo que nos servira para pasar del hexagrama a binario y poder ponerlo
     var auxh = [];
     //Servira para saber si hay almenos un mutante
     var verif = false;
     //Evalua cada linea del hexagrama
     hexagrama.forEach(function (numero, index) {
+        //Primero verifica si tiene un mutante
         if (numero == 7 || numero == 9) {
             auxh[index] = 0;
             if (numero == 9 && !verif) verif = true;
@@ -305,6 +321,22 @@ function generateHexagram() {
             if (numero == 6 && !verif) verif = true;
         }
         console.log(auxh[index]);
+
+        hexagrama.forEach(function (numero, index) {
+            //Luego para su vizualizacion
+            if (numero == 9) {
+                hexagramSmutante[index] = numero - 2;
+            } else if (numero == 6) {
+                hexagramSmutante[index] = numero + 2;
+            } else hexagramSmutante[index] = numero;
+            console.log("transform" + hexagramSmutante[index]);
+            //Verificamos el tipo de svg y se guarda en variable
+            var cont = typeSvg(hexagramSmutante[index]);
+
+            hexagram.appendChild(cont);
+            base = document.getElementById("hexagrama");
+            base.appendChild(hexagram);
+        });
     });
 
     //Tomando que yang = 0 y yin = 1 sea mutante o no se hace una conversion de binario a decimal
@@ -397,7 +429,7 @@ function generateHexagram() {
     pname.textContent = "Hexagrama Principal";
     pname.setAttribute("id", "parrafoname");
     pname.classList.add("namep");
-    base.appendChild(pname);    
+    base.appendChild(pname);
 }
 
 function Descrip(base) {
@@ -733,262 +765,197 @@ function Descrip(base) {
     }
 }
 
-function Borrar()
-{
-    if(nombrehex == nombreHexagrama[0])
-    {
+function Borrar() {
+    if (nombrehex == nombreHexagrama[0]) {
         document.getElementById("a1").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[1])
-    {
+    if (nombrehex == nombreHexagrama[1]) {
         document.getElementById("a2").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[2])
-    {
+    if (nombrehex == nombreHexagrama[2]) {
         document.getElementById("a3").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[3])
-    {
+    if (nombrehex == nombreHexagrama[3]) {
         document.getElementById("a4").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[4])
-    {
+    if (nombrehex == nombreHexagrama[4]) {
         document.getElementById("a5").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[5])
-    {
+    if (nombrehex == nombreHexagrama[5]) {
         document.getElementById("a6").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[6])
-    {
+    if (nombrehex == nombreHexagrama[6]) {
         document.getElementById("a7").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[7])
-    {
+    if (nombrehex == nombreHexagrama[7]) {
         document.getElementById("a8").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[8])
-    {
+    if (nombrehex == nombreHexagrama[8]) {
         document.getElementById("a9").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[9])
-    {
+    if (nombrehex == nombreHexagrama[9]) {
         document.getElementById("a10").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[10])
-    {
+    if (nombrehex == nombreHexagrama[10]) {
         document.getElementById("a11").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[11])
-    {
+    if (nombrehex == nombreHexagrama[11]) {
         document.getElementById("a12").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[12])
-    {
+    if (nombrehex == nombreHexagrama[12]) {
         document.getElementById("a13").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[13])
-    {
+    if (nombrehex == nombreHexagrama[13]) {
         document.getElementById("a14").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[14])
-    {
+    if (nombrehex == nombreHexagrama[14]) {
         document.getElementById("a15").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[15])
-    {
+    if (nombrehex == nombreHexagrama[15]) {
         document.getElementById("a16").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[16])
-    {
+    if (nombrehex == nombreHexagrama[16]) {
         document.getElementById("a17").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[17])
-    {
+    if (nombrehex == nombreHexagrama[17]) {
         document.getElementById("a18").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[18])
-    {
+    if (nombrehex == nombreHexagrama[18]) {
         document.getElementById("a19").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[19])
-    {
+    if (nombrehex == nombreHexagrama[19]) {
         document.getElementById("a20").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[20])
-    {
+    if (nombrehex == nombreHexagrama[20]) {
         document.getElementById("a21").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[21])
-    {
+    if (nombrehex == nombreHexagrama[21]) {
         document.getElementById("a22").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[22])
-    {
+    if (nombrehex == nombreHexagrama[22]) {
         document.getElementById("a23").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[23])
-    {
+    if (nombrehex == nombreHexagrama[23]) {
         document.getElementById("a24").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[24])
-    {
+    if (nombrehex == nombreHexagrama[24]) {
         document.getElementById("a25").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[25])
-    {
+    if (nombrehex == nombreHexagrama[25]) {
         document.getElementById("a26").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[26])
-    {
+    if (nombrehex == nombreHexagrama[26]) {
         document.getElementById("a27").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[27])
-    {
+    if (nombrehex == nombreHexagrama[27]) {
         document.getElementById("a28").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[28])
-    {
+    if (nombrehex == nombreHexagrama[28]) {
         document.getElementById("a29").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[29])
-    {
+    if (nombrehex == nombreHexagrama[29]) {
         document.getElementById("a30").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[30])
-    {
+    if (nombrehex == nombreHexagrama[30]) {
         document.getElementById("a31").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[31])
-    {
+    if (nombrehex == nombreHexagrama[31]) {
         document.getElementById("a32").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[32])
-    {
+    if (nombrehex == nombreHexagrama[32]) {
         document.getElementById("a33").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[33])
-    {
+    if (nombrehex == nombreHexagrama[33]) {
         document.getElementById("a34").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[34])
-    {
+    if (nombrehex == nombreHexagrama[34]) {
         document.getElementById("a35").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[35])
-    {
+    if (nombrehex == nombreHexagrama[35]) {
         document.getElementById("a36").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[36])
-    {
+    if (nombrehex == nombreHexagrama[36]) {
         document.getElementById("a37").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[37])
-    {
+    if (nombrehex == nombreHexagrama[37]) {
         document.getElementById("a38").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[38])
-    {
+    if (nombrehex == nombreHexagrama[38]) {
         document.getElementById("a39").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[39])
-    {
+    if (nombrehex == nombreHexagrama[39]) {
         document.getElementById("a40").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[40])
-    {
+    if (nombrehex == nombreHexagrama[40]) {
         document.getElementById("a41").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[41])
-    {
+    if (nombrehex == nombreHexagrama[41]) {
         document.getElementById("a42").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[42])
-    {
+    if (nombrehex == nombreHexagrama[42]) {
         document.getElementById("a43").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[43])
-    {
+    if (nombrehex == nombreHexagrama[43]) {
         document.getElementById("a44").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[44])
-    {
+    if (nombrehex == nombreHexagrama[44]) {
         document.getElementById("a45").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[45])
-    {
+    if (nombrehex == nombreHexagrama[45]) {
         document.getElementById("a46").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[46])
-    {
+    if (nombrehex == nombreHexagrama[46]) {
         document.getElementById("a47").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[47])
-    {
+    if (nombrehex == nombreHexagrama[47]) {
         document.getElementById("a48").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[48])
-    {
+    if (nombrehex == nombreHexagrama[48]) {
         document.getElementById("a49").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[49])
-    {
+    if (nombrehex == nombreHexagrama[49]) {
         document.getElementById("a50").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[50])
-    {
+    if (nombrehex == nombreHexagrama[50]) {
         document.getElementById("a51").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[51])
-    {
+    if (nombrehex == nombreHexagrama[51]) {
         document.getElementById("a52").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[52])
-    {
+    if (nombrehex == nombreHexagrama[52]) {
         document.getElementById("a53").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[53])
-    {
+    if (nombrehex == nombreHexagrama[53]) {
         document.getElementById("a54").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[54])
-    {
+    if (nombrehex == nombreHexagrama[54]) {
         document.getElementById("a55").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[55])
-    {
+    if (nombrehex == nombreHexagrama[55]) {
         document.getElementById("a56").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[56])
-    {
+    if (nombrehex == nombreHexagrama[56]) {
         document.getElementById("a57").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[57])
-    {
+    if (nombrehex == nombreHexagrama[57]) {
         document.getElementById("a58").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[58])
-    {
+    if (nombrehex == nombreHexagrama[58]) {
         document.getElementById("a59").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[59])
-    {
+    if (nombrehex == nombreHexagrama[59]) {
         document.getElementById("a60").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[60])
-    {
+    if (nombrehex == nombreHexagrama[60]) {
         document.getElementById("a61").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[61])
-    {
+    if (nombrehex == nombreHexagrama[61]) {
         document.getElementById("a62").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[62])
-    {
+    if (nombrehex == nombreHexagrama[62]) {
         document.getElementById("a63").classList.remove("relleno");
     }
-    if(nombrehex == nombreHexagrama[63])
-    {
+    if (nombrehex == nombreHexagrama[63]) {
         document.getElementById("a64").classList.remove("relleno");
     }
 }
