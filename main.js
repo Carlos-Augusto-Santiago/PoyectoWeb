@@ -86,6 +86,8 @@ function typeSvg(total) {
 var contador = 0;
 //Arreglo para guardar los valores del hexagrama
 var hexagrama = [];
+//Arreglo para visulizar si es que tiene un mutante 
+var hexagramSmutante = [];
 
 //Obtener los valores al presionar el botton Ingresa valores
 function getData() {
@@ -238,6 +240,7 @@ function generateHexagram(){
     var verif = false;
     //Evalua cada linea del hexagrama 
     hexagrama.forEach( function(numero,index){
+        //Primero verifica si tiene un mutante 
         if(numero==7 || numero == 9)
         {
             auxh[index]=0;
@@ -251,6 +254,18 @@ function generateHexagram(){
                 verif = true;
         }
         console.log(auxh[index]);
+
+        //Luego para su vizualizacion 
+        if(numero == 9)
+            {
+                hexagramSmutante[index] = numero-2;
+            } 
+            else if(numero == 6)
+            {
+                hexagramSmutante[index] = numero+2;
+            }
+            else
+            hexagramSmutante[index] = numero;
     });
 
     //Tomando que yang = 0 y yin = 1 sea mutante o no se hace una conversion de binario a decimal
