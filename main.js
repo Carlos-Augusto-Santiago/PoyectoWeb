@@ -188,12 +188,8 @@ function deleteLine() {
         pan.classList.remove("namepborrar");
     }, 3000);
     let sp1 = document.getElementById("spantool");
-<<<<<<< HEAD
     if(sp1) base.removeChild(sp1);
     Borrar();
-=======
-    if (sp1) base.removeChild(sp1);
->>>>>>> 0ea46c7 (hexagrama final)
 }
 
 function deleteHexagram() {
