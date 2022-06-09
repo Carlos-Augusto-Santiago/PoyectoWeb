@@ -70,26 +70,35 @@ html {
                 }
             }
         }
-        #hexagramas {
-            margin-top: 3rem;
-            margin-left: 3rem;
-            width: 10rem;
+        div{
             display: flex;
-            flex-direction: column-reverse;            
-            padding: 2rem;
-            div {
-                height: 40px;
+            flex-direction: row;
+            #hexagramas, #hexagramas2 {
+                margin-top: 3rem;
+                margin-left: 3rem;
+                width: 10rem;
                 display: flex;
-                flex-direction: row;
-                align-items: center;
-                svg {
-                    width: 90px;
-                    height: 3px;
+                flex-direction: column-reverse;            
+                padding: 2rem;
+                height: auto;
+                text-align: center;
+                #parrafoname{
+                    font-size: 1.5rem;                    
                 }
-                #svg-complete {
-                    width: 200px;
+                div {
+                    height: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    svg {
+                        width: 90px;
+                        height: 3px;
+                    }
+                    #svg-complete {
+                        width: 200px;
+                    }
                 }
-            }
+            }            
         }
     }
 }

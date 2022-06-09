@@ -97,7 +97,17 @@ html body section article form div .hexa:hover {
   cursor: pointer;
 }
 
-html body #hexagramas {
+html body div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+html body div #hexagramas, html body div #hexagramas2 {
   margin-top: 3rem;
   margin-left: 3rem;
   width: 10rem;
@@ -109,9 +119,15 @@ html body #hexagramas {
       -ms-flex-direction: column-reverse;
           flex-direction: column-reverse;
   padding: 2rem;
+  height: auto;
+  text-align: center;
 }
 
-html body #hexagramas div {
+html body div #hexagramas #parrafoname, html body div #hexagramas2 #parrafoname {
+  font-size: 1.5rem;
+}
+
+html body div #hexagramas div, html body div #hexagramas2 div {
   height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -125,14 +141,15 @@ html body #hexagramas div {
           align-items: center;
 }
 
-html body #hexagramas div svg {
+html body div #hexagramas div svg, html body div #hexagramas2 div svg {
   width: 90px;
   height: 3px;
 }
 
-html body #hexagramas div #svg-complete {
+html body div #hexagramas div #svg-complete, html body div #hexagramas2 div #svg-complete {
   width: 200px;
 }
+<<<<<<< HEAD
 /*# sourceMappingURL=estilos.css.map */
 
 
@@ -217,3 +234,6 @@ html body #hexagramas div #svg-complete {
 .relleno{
   background-color: blue;
 }
+=======
+/*# sourceMappingURL=estilos.css.map */
+>>>>>>> 0ea46c7 (hexagrama final)
