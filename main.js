@@ -115,6 +115,7 @@ function getData() {
         //La caja ya existe
         else {
             var hexagram = document.getElementById("hexagramas");
+            hexagram.classList.add("color");
         }
         hexagram.style.backgroundColor = "lightslategray";
 
@@ -146,10 +147,12 @@ function generateRandom() {
             //Creacion de la caja en donde poner los hexagramas
             var hexagram = document.createElement("section");
             hexagram.setAttribute("id", "hexagramas");
+            hexagram.classList.add("color");
         }
         //La caja ya existe
         else {
             var hexagram = document.getElementById("hexagramas");
+            hexagram.classList.add("color");
         }
         hexagram.style.backgroundColor = "lightslategray";
 

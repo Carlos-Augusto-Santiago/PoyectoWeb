@@ -129,6 +129,7 @@ html body div #hexagramas #parrafoname, html body div #hexagramas2 #parrafoname,
 
 html body div #hexagramas div, html body div #hexagramas2 div, html body div #hexagramas3 div {
   height: 40px;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -212,18 +213,12 @@ html body div #hexagramas div #svg-complete, html body div #hexagramas2 div #svg
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 130px;
+  width: 100%;
   background-color: red;
   color: black;
   text-align: center;
   border-radius: 6px;
   padding: 10px 0;
-
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-  left: 300px;
-  bottom: 260px;
 }
 
 .tooltip:hover .tooltiptext {
