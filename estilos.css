@@ -195,7 +195,7 @@ html body #hexagramas div #svg-complete {
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 120px;
+  width: 130px;
   background-color: red;
   color: black;
   text-align: center;

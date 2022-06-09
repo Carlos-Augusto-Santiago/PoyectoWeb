@@ -184,6 +184,8 @@ function deleteLine() {
         hexagram.remove();
     }
     setTimeout(() => {hexagram.classList.remove('namep');pan.classList.remove("namepborrar");}, 3000);
+    let sp1 = document.getElementById("spantool");
+    if(sp1) base.removeChild(sp1);
 }
 
 function deleteHexagram() {
@@ -197,6 +199,8 @@ function deleteHexagram() {
     //restablecemos el contador para que siga tirando
     contador = 0;
     setTimeout(() => {hexagram.classList.remove('colorborrar');pan.classList.remove("namepborrar");}, 3000);
+    let sp1 = document.getElementById("spantool");
+    if(sp1) base.removeChild(sp1);
 }
 
 //Los numeros de los exagramas dependendiendo de su numero en binario
@@ -326,6 +330,7 @@ function generateHexagram(){
 function Descrip()
 {
     let sp = document.createElement("span");
+    sp.setAttribute("id","spantool");
     sp.classList.add("tooltiptext");
 
     if(nombrehex == nombreHexagrama[0])
@@ -343,4 +348,310 @@ function Descrip()
         sp.textContent = "Acumular. El obstáculo inicial.La dificultad del comienzo";
         base.appendChild(sp);
     }
+    if(nombrehex == nombreHexagrama[3])
+    {
+        sp.textContent = "Juventud.El joven necio.La inmadurez";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[4])
+    {
+        sp.textContent = "Esperar.La espera.La maduración.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[5])
+    {
+        sp.textContent = "Disputar.El conflicto.El pleito";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[6])
+    {
+        sp.textContent = "Ejército.La legión.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[7])
+    {
+        sp.textContent = "Solidaridad.La unión";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[8])
+    {
+        sp.textContent = "Animalito doméstico.La pequeña fuerza";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[9])
+    {
+        sp.textContent = "Caminar.El porte.El paso cauteloso";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[10])
+    {
+        sp.textContent = "Prosperidad.La paz.La armonía.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[11])
+    {
+        sp.textContent = "Cierre.El estancamiento.Lo inerte.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[12])
+    {
+        sp.textContent = "Hombres Reunidos. La unión comunitaria";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[13])
+    {
+        sp.textContent = "Gran dominio. La gran posesión.Lo que se tiene de más.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[14])
+    {
+        sp.textContent = "Condescendencia. La modestia.La humildad";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[15])
+    {
+        sp.textContent = "Ocuparse.El entusiasmo.La algarabía.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[16])
+    {
+        sp.textContent = "Conformarse.La continuidad.El seguimiento.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[17])
+    {
+        sp.textContent = "Destrucción.La reconstrucción. La labor en lo corrompido.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[18])
+    {
+        sp.textContent = "Acercarse.Lo que va llegando.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[19])
+    {
+        sp.textContent = "Observar.La contemplación.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[20])
+    {
+        sp.textContent = "Quebrar mordiendo.La dentellada.La filosa mordedura";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[21])
+    {
+        sp.textContent = "Adornar.La elegancia.La gracia.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[22])
+    {
+        sp.textContent = "Resquebrajar.La desintegración.El derrumbe";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[23])
+    {
+        sp.textContent = "Regresar.El retorno.Lo que vuelve.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[24])
+    {
+        sp.textContent = "Sinceridad. La inocencia.La naturalidad.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[25])
+    {
+        sp.textContent = "Fuerza educadora.El poder de lo fuerte.La gran acumulación.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[26])
+    {
+        sp.textContent = "Nutrirse.La alimentación.Las fauces.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[27])
+    {
+        sp.textContent = "Excesos.La preponderancia de lo grande.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[28])
+    {
+        sp.textContent = "Peligro.Lo abismal.La caida.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[29])
+    {
+        sp.textContent = "Distinguir.El resplandor.Lo adherente.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[30])
+    {
+        sp.textContent = "Unir.La influencia.La atracción.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[31])
+    {
+        sp.textContent = "Luna Creciente.La duración. La permanencia.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[32])
+    {
+        sp.textContent = "Retirarse.EL repliegue.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[33])
+    {
+        sp.textContent = "Gran fuerza.El gran vigor.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[34])
+    {
+        sp.textContent = "Progresar.El avance.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[35])
+    {
+        sp.textContent = "Luz que se apaga.El oscurecimiento.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[36])
+    {
+        sp.textContent = "Gente de familia. El clan.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[37])
+    {
+        sp.textContent = "Contraste.La oposición.El antagonismo.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[38])
+    {
+        sp.textContent = "Dificultad.El obstáculo. El impedimento.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[39])
+    {
+        sp.textContent = "Explicar.La liberación. El alivio.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[40])
+    {
+        sp.textContent = "Perder.La disminución.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[41])
+    {
+        sp.textContent = "Evolución.El aumento.La ganancia";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[42])
+    {
+        sp.textContent = "Decidir.El desbordamiento.La resolución.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[43])
+    {
+        sp.textContent = "Encontrarse.El acoplamiento.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[44])
+    {
+        sp.textContent = "Cosechar.La reunión.La convergencia.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[45])
+    {
+        sp.textContent = "Subir.El ascenso.La escalada.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[46])
+    {
+        sp.textContent = "Angustia.La pesadumbre.El agotamiento.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[47])
+    {
+        sp.textContent = "El pozo de agua.La fuente.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[48])
+    {
+        sp.textContent = "Renovar.La revolución.El cambio";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[49])
+    {
+        sp.textContent = "La caldera.Lo alquímico";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[50])
+    {
+        sp.textContent = "Trueno.La conmoción.Lo suscitativo.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[51])
+    {
+        sp.textContent = "Cimientos.La quietud.La detención.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[52])
+    {
+        sp.textContent = "Evolución.El progreso gradual.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[53])
+    {
+        sp.textContent = "Desposar a la hija menor.La doncella.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[54])
+    {
+        sp.textContent = "Abundancia.La plenitud.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[55])
+    {
+        sp.textContent = "Viajero.El andariego";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[56])
+    {
+        sp.textContent = "Viento.Lo penetrante.Lo suave.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[57])
+    {
+        sp.textContent = "Recogerse. La serenidad. La satisfacción.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[58])
+    {
+        sp.textContent = "Confusión. La dispersión.La disolución";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[59])
+    {
+        sp.textContent = "Moderación.La restricción.La limitación";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[60])
+    {
+        sp.textContent = "Fe Interior.La verdad interior.La sinceridad interna.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[61])
+    {
+        sp.textContent = "Pequeñas cosas importantes.La pequeña preponderancia.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[62])
+    {
+        sp.textContent = "Conclusiones.Después de la realización.";
+        base.appendChild(sp);
+    }
+    if(nombrehex == nombreHexagrama[63])
+    {
+        sp.textContent = "Inconcluso.Antes de la realización.";
+        base.appendChild(sp);
+    }
 }
+
