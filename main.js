@@ -328,16 +328,16 @@ function generateHexagram() {
     //Si es que tiene un mutante sigue esta parte
     if (verif) {
         //Caja en donde se van a colocar los svg
-        var verificar = document.getElementById("hexagramas2");
+        var verificar = document.getElementById("hexagramas3");
         //Verificar si hay caja de hexagramas
         if (verificar == null) {
             //Creacion de la caja en donde poner los hexagramas
             var hexagram = document.createElement("section");
-            hexagram.setAttribute("id", "hexagramas2");
+            hexagram.setAttribute("id", "hexagramas3");
         }
         //La caja ya existe
         else {
-            var hexagram = document.getElementById("hexagramas2");
+            var hexagram = document.getElementById("hexagramas3");
         }
         hexagram.style.backgroundColor = "lightslategray";
         //Un arreglo que nos servira para guardar la transformacion y no alterar el hexagrama original
@@ -383,7 +383,7 @@ function generateHexagram() {
         nombrehex = nombreHexagrama[hexagramaSecuencia[tipoHexagrama] - 1];
         console.log(nombrehex);
 
-        base = document.getElementById("hexagramas2");
+        base = document.getElementById("hexagramas3");
         let pname = document.createElement("p");
         pname.textContent = nombrehex;
         pname.setAttribute("id", "parrafoname");

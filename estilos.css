@@ -107,7 +107,7 @@ html body div {
           flex-direction: row;
 }
 
-html body div #hexagramas, html body div #hexagramas2 {
+html body div #hexagramas, html body div #hexagramas2, html body div #hexagramas3 {
   margin-top: 3rem;
   margin-left: 3rem;
   width: 10rem;
@@ -123,11 +123,11 @@ html body div #hexagramas, html body div #hexagramas2 {
   text-align: center;
 }
 
-html body div #hexagramas #parrafoname, html body div #hexagramas2 #parrafoname {
+html body div #hexagramas #parrafoname, html body div #hexagramas2 #parrafoname, html body div #hexagramas3 #parrafoname {
   font-size: 1.5rem;
 }
 
-html body div #hexagramas div, html body div #hexagramas2 div {
+html body div #hexagramas div, html body div #hexagramas2 div, html body div #hexagramas3 div {
   height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -141,12 +141,12 @@ html body div #hexagramas div, html body div #hexagramas2 div {
           align-items: center;
 }
 
-html body div #hexagramas div svg, html body div #hexagramas2 div svg {
+html body div #hexagramas div svg, html body div #hexagramas2 div svg, html body div #hexagramas3 div svg {
   width: 90px;
   height: 3px;
 }
 
-html body div #hexagramas div #svg-complete, html body div #hexagramas2 div #svg-complete {
+html body div #hexagramas div #svg-complete, html body div #hexagramas2 div #svg-complete, html body div #hexagramas3 div #svg-complete {
   width: 200px;
 }
 /*# sourceMappingURL=estilos.css.map */
