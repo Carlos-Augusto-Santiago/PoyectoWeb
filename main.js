@@ -303,7 +303,7 @@ function generateHexagram() {
     }
     //La caja ya existe
     else {
-        var hexagram = document.getElementById("hexagramas2");
+        var hexagram = document.getElementById("hexagramas3");
     }
     hexagram.style.backgroundColor = "lightslategray";
     //Un arreglo que nos servira para pasar del hexagrama a binario y poder ponerlo
@@ -322,21 +322,19 @@ function generateHexagram() {
         }
         console.log(auxh[index]);
 
-        hexagrama.forEach(function (numero, index) {
-            //Luego para su vizualizacion
-            if (numero == 9) {
-                hexagramSmutante[index] = numero - 2;
-            } else if (numero == 6) {
-                hexagramSmutante[index] = numero + 2;
-            } else hexagramSmutante[index] = numero;
-            console.log("transform" + hexagramSmutante[index]);
-            //Verificamos el tipo de svg y se guarda en variable
-            var cont = typeSvg(hexagramSmutante[index]);
+        //Luego para su vizualizacion
+        if (numero == 9) {
+            hexagramSmutante[index] = numero - 2;
+        } else if (numero == 6) {
+            hexagramSmutante[index] = numero + 2;
+        } else hexagramSmutante[index] = numero;
+        console.log("transform" + hexagramSmutante[index]);
+        //Verificamos el tipo de svg y se guarda en variable
+        var cont = typeSvg(hexagramSmutante[index]);
 
-            hexagram.appendChild(cont);
-            base = document.getElementById("hexagrama");
-            base.appendChild(hexagram);
-        });
+        hexagram.appendChild(cont);
+        base = document.getElementById("hexagrama");
+        base.appendChild(hexagram);
     });
 
     //Tomando que yang = 0 y yin = 1 sea mutante o no se hace una conversion de binario a decimal
@@ -356,6 +354,14 @@ function generateHexagram() {
     //Para usar su nombre nombreHexagrama[hexagramaSecuencia[tipoHexagrama]-1] si quieres lo puedes guardar
     nombrehex = nombreHexagrama[hexagramaSecuencia[tipoHexagrama] - 1];
     console.log(nombrehex);
+
+    base = document.getElementById("hexagramas2");
+    let pname2 = document.createElement("p");
+    pname2.textContent = nombrehex;
+    pname2.setAttribute("id", "parrafoname");
+    pname2.classList.add("namep");
+    base.appendChild(pname2);
+    Descrip(base);
 
     //Si es que tiene un mutante sigue esta parte
     if (verif) {
